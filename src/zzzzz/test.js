@@ -45,9 +45,11 @@ const MyFetch = () => {
     }, [response])
 
     console.log(response);
-    useEffect(() => {
 
+    useEffect(() => {
     }, [isToken])
+
+
     return (
         <form noValidate>
             <div>
@@ -65,10 +67,10 @@ const MyFetch = () => {
             <button type="submit">submit</button>
 
 
-            {/*<button onClick={getToken}>get Token</button>*/}
-            {/*<br/>*/}
-            {/*<button onClick={getData}>get Data</button>*/}
-            {/*<div>{response.access}</div>*/}
+            <button onClick={getToken}>get Token</button>
+            <br/>
+            <button onClick={getData}>get Data</button>
+            <div>{response.access}</div>
         </form>
     )
 }

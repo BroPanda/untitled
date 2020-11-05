@@ -10,12 +10,10 @@ import ConstrProjPage from "./ConstrProjPage/ConstrProjPage";
 
 ReactDOM.render(
     <>
-        {/*<React.StrictMode>*/}
         <BrowserRouter>
-            <Route path="/" component={localStorage.getItem('token') ? App : LoginPage}/>
+            <Route exact="/" component={LoginPage}/>
             <Route path="/constr_project" component={ConstrProjPage}/>
         </BrowserRouter>
-        {/*</React.StrictMode>,*/}
     </>,
     document.getElementById('root')
 );
