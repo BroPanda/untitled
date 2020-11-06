@@ -8,7 +8,7 @@ import ConstrProjPage from "./ConstrProjPage/ConstrProjPage";
 ReactDOM.render(
     <>
         <BrowserRouter>
-            <Route path="/" component={LoginPage}/>
+            <Route path="/" component={LoginPage} exact/>
             <Route path="/constr_project" component={ConstrProjPage}/>
         </BrowserRouter>
     </>,
