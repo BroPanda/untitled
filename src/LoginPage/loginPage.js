@@ -3,8 +3,9 @@ import useForm from "./useForm";
 import validateLogin from "./validateLogin";
 import {Redirect} from "react-router-dom"
 
+
 const LoginPage = () => {
-    const {values, handleChange, handleSubmit, errors} = useForm(submit, validateLogin)
+    const {values, handleChange, handleSubmit, errors} = useForm(submit, validateLogin, true)
     const [sub, setSub] = useState(false)
 
     function submit() {
@@ -13,7 +14,7 @@ const LoginPage = () => {
     }
 
     if (sub) {
-        return <Redirect to={'/constr_project'}/>
+        // return <Redirect to={'/constr_project'}/>
     }
 
     return (

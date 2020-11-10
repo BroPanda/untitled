@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
-import getToken from "./getToken";
+import getToken from "../serviceFile/getToken";
 
-const useForm = (submit, validateLogin) => {
+const useForm = (submit, validateLogin, statusRed = false) => {
     const [values, setValues] = useState({email: "", password: ""})
     const [errors, setErrors] = useState({})
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,9 +24,9 @@ const useForm = (submit, validateLogin) => {
     useEffect(() => {
 
         if (Object.keys(errors).length === 0 && isSubmitting) {
-            console.log(getToken(values));
-
+            statusRed ? getToken(values, 'constr_project') : getToken(values)
             submit()
+
         }
     }, [errors])
 
