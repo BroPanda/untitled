@@ -17,8 +17,14 @@ function GetToken(value, statusRedirect = false) {
         .then((responseData) => {
             localStorage.setItem("token", responseData.access)
             localStorage.setItem("refreshToken", responseData.refresh)
+            console.log(responseData);
+            if(responseData.detail){
+                console.log(`responseData.detail ${responseData.detail}`);
+                localStorage.setItem("detail", responseData.detail)
 
-            if (statusRedirect) {
+            }
+            if (statusRedirect && responseData.access) {
+                localStorage.setItem("detail", '')
                 // <Redirect to="/constr_project" />
                 window.location.href =`http://localhost:3000/${statusRedirect}`
             }

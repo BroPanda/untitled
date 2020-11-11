@@ -32,6 +32,8 @@ const LoginPage = () => {
             </div>
 
             <button type="submit">submit</button>
+
+            {sub && localStorage.getItem('detail') && <div>error</div>}
         </form>
     )
 }

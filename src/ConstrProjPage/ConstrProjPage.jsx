@@ -18,16 +18,14 @@ const ConstrProjPage = () => {
             )
     }, [setResponse])
 
+    console.log(`!!!!!!!!!!!!!!!! ${JSON.stringify(response)}`)
     checkAuth(response)
 
-    console.log(`response.code ${response.code}`);
-    console.log(`response.id ${response}`);
     return (
         <div>
-            <p>costructions</p>
+            <h1>Перелік проектів</h1>
             <div>
                 {
-
                     response[0] &&
                     response.map(res => (
                         <div key={res.id}>
